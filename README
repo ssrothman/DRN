@@ -1,0 +1,13 @@
+requires torch and torch_geometric
+
+torch should be installed with conda - something like
+
+ >> conda install pytorch pytorch-cuda=12.1 -c pytorch -c nvidia
+
+important to make sure that (on a GPU node) torch.cuda.is_available() is True
+otherwise something has gone wrong
+
+torch_geomtric installation is more annoying. you need to get the subpackages from pip, and you need to make sure you're getting them from the right place. ie make sure the url below matches the torch version and cuda version of your main install
+
+ >> pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.3.0+cu121.html
+ >> pip install torch_geometric
